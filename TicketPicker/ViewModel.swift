@@ -11,42 +11,41 @@ import Firebase
 class ViewModel: ObservableObject {
 	@Published var textLabel = "Default"
 	
-	private let remoteConfig = RemoteConfig.remoteConfig()
-	private let remoteConfigSettings = RemoteConfigSettings()
+	private let remoteConfig: RemoteConfig
 	
+	init() {
+		remoteConfig = RemoteConfig.remoteConfig()
+		let settings = RemoteConfigSettings()
+		settings.minimumFetchInterval = 0
+		remoteConfig.configSettings = settings
+		setupRemoteConfigDefaults()
+		fetchRemoteConfig()
+	}
 	
-	func setupRemoteConfigDefaults() {
-		// set remote config
-		self.remoteConfigSettings.minimumFetchInterval = 0
-		self.remoteConfig.configSettings = remoteConfigSettings
-		
+	private func setupRemoteConfigDefaults() {
 		// set up default values in plist
 		remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
 		
 		// setup default value in the function
-//		let defaultValues = [
-//			"textLabel": "Default text" as NSObject,
-//			"textLabel2": "Default text2" as NSObject
-//		]
-//
-//		remoteConfig.setDefaults(defaultValues)
+		//		let defaultValues = [
+		//			"textLabel": "Default text" as NSObject,
+		//			"textLabel2": "Default text2" as NSObject
+		//		]
+		//
+		//		remoteConfig.setDefaults(defaultValues)
 	}
 	
-	func fetchRemoteConfig() {
+	private func fetchRemoteConfig() {
 		
-		let remoteConfigSettings = RemoteConfigSettings()
-		// FIXME: remove this before we go into production, debug settings
-		remoteConfigSettings.minimumFetchInterval = 0
-		
-		RemoteConfig.remoteConfig().fetch(withExpirationDuration: 0) { (status, error) in
-			guard error == nil else {
-				print("Got an error fetching remote values: \(error)")
-				return
+		remoteConfig.fetch { (status, error) -> Void in
+			if status == .success {
+				print("Config fetched!")
+				self.remoteConfig.activate { (changed, error) in
+					print("Changed \(changed)")
+				}
+			} else {
+				print("Config not fetched, Error: \(error?.localizedDescription ?? "No error available")")
 			}
-			
-			print("Yeah! Received values from the cloud!")
-			RemoteConfig.remoteConfig().
-			
 		}
-	}
+	} // END: fetchRemoteConfig
 }
