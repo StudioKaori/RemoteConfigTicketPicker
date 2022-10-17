@@ -41,8 +41,11 @@ class ViewModel: ObservableObject {
 			if status == .success {
 				print("Config fetched!")
 				self.remoteConfig.activate { (changed, error) in
-					print("Changed \(changed)")
+					// You will see the changed status true or false
+					print("Changed: \(changed)")
+					
 					DispatchQueue.main.async {
+						// To read the value from firebase, you can simply access remoteConfig["KEY_NAME"].stringValue or intValue
 						self.textLabel = self.remoteConfig["textLabel"].stringValue ?? "default text"
 					}
 					
