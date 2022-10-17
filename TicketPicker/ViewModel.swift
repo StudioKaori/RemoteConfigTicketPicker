@@ -20,13 +20,16 @@ class ViewModel: ObservableObject {
 		self.remoteConfigSettings.minimumFetchInterval = 0
 		self.remoteConfig.configSettings = remoteConfigSettings
 		
-		// setup default value
-		let defaultValues = [
-			"textLabel": "Default text" as NSObject,
-			"textLabel2": "Default text2" as NSObject
-		]
+		// set up default values in plist
+		remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
 		
-		remoteConfig.setDefaults(defaultValues)
+		// setup default value in the function
+//		let defaultValues = [
+//			"textLabel": "Default text" as NSObject,
+//			"textLabel2": "Default text2" as NSObject
+//		]
+//
+//		remoteConfig.setDefaults(defaultValues)
 	}
 	
 	func fetchRemoteConfig() {
