@@ -11,6 +11,9 @@
 		430500E528FD8686008D0E5B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430500E428FD8686008D0E5B /* ContentView.swift */; };
 		430500E728FD8687008D0E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430500E628FD8687008D0E5B /* Assets.xcassets */; };
 		430500EA28FD8687008D0E5B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430500E928FD8687008D0E5B /* Preview Assets.xcassets */; };
+		430500F128FD8727008D0E5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 430500F028FD8727008D0E5B /* GoogleService-Info.plist */; };
+		430500F428FD8848008D0E5B /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 430500F328FD8848008D0E5B /* FirebaseRemoteConfig */; };
+		430500F628FD8848008D0E5B /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 430500F528FD8848008D0E5B /* FirebaseRemoteConfigSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,7 @@
 		430500E428FD8686008D0E5B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		430500E628FD8687008D0E5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		430500E928FD8687008D0E5B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		430500F028FD8727008D0E5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +30,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				430500F428FD8848008D0E5B /* FirebaseRemoteConfig in Frameworks */,
+				430500F628FD8848008D0E5B /* FirebaseRemoteConfigSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +60,7 @@
 				430500E228FD8686008D0E5B /* TicketPickerApp.swift */,
 				430500E428FD8686008D0E5B /* ContentView.swift */,
 				430500E628FD8687008D0E5B /* Assets.xcassets */,
+				430500F028FD8727008D0E5B /* GoogleService-Info.plist */,
 				430500E828FD8687008D0E5B /* Preview Content */,
 			);
 			path = TicketPicker;
@@ -83,6 +90,10 @@
 			dependencies = (
 			);
 			name = TicketPicker;
+			packageProductDependencies = (
+				430500F328FD8848008D0E5B /* FirebaseRemoteConfig */,
+				430500F528FD8848008D0E5B /* FirebaseRemoteConfigSwift */,
+			);
 			productName = TicketPicker;
 			productReference = 430500DF28FD8686008D0E5B /* TicketPicker.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 430500D628FD8686008D0E5B;
+			packageReferences = (
+				430500F228FD8848008D0E5B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 430500E028FD8686008D0E5B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +141,7 @@
 			files = (
 				430500EA28FD8687008D0E5B /* Preview Assets.xcassets in Resources */,
 				430500E728FD8687008D0E5B /* Assets.xcassets in Resources */,
+				430500F128FD8727008D0E5B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +354,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		430500F228FD8848008D0E5B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		430500F328FD8848008D0E5B /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 430500F228FD8848008D0E5B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		430500F528FD8848008D0E5B /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 430500F228FD8848008D0E5B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 430500D728FD8686008D0E5B /* Project object */;
 }
