@@ -42,6 +42,10 @@ class ViewModel: ObservableObject {
 				print("Config fetched!")
 				self.remoteConfig.activate { (changed, error) in
 					print("Changed \(changed)")
+					DispatchQueue.main.async {
+						self.textLabel = self.remoteConfig["textLabel"].stringValue ?? "default text"
+					}
+					
 				}
 			} else {
 				print("Config not fetched, Error: \(error?.localizedDescription ?? "No error available")")
