@@ -15,6 +15,7 @@
 		430500F428FD8848008D0E5B /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 430500F328FD8848008D0E5B /* FirebaseRemoteConfig */; };
 		430500F628FD8848008D0E5B /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 430500F528FD8848008D0E5B /* FirebaseRemoteConfigSwift */; };
 		430500F828FD895C008D0E5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430500F728FD895C008D0E5B /* AppDelegate.swift */; };
+		430500FA28FD8E1E008D0E5B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430500F928FD8E1E008D0E5B /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		430500E928FD8687008D0E5B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		430500F028FD8727008D0E5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		430500F728FD895C008D0E5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		430500F928FD8E1E008D0E5B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				430500F728FD895C008D0E5B /* AppDelegate.swift */,
 				430500E228FD8686008D0E5B /* TicketPickerApp.swift */,
 				430500E428FD8686008D0E5B /* ContentView.swift */,
+				430500F928FD8E1E008D0E5B /* ViewModel.swift */,
 				430500E628FD8687008D0E5B /* Assets.xcassets */,
 				430500F028FD8727008D0E5B /* GoogleService-Info.plist */,
 				430500E828FD8687008D0E5B /* Preview Content */,
@@ -157,6 +160,7 @@
 			files = (
 				430500F828FD895C008D0E5B /* AppDelegate.swift in Sources */,
 				430500E528FD8686008D0E5B /* ContentView.swift in Sources */,
+				430500FA28FD8E1E008D0E5B /* ViewModel.swift in Sources */,
 				430500E328FD8686008D0E5B /* TicketPickerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
