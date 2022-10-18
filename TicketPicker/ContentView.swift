@@ -10,19 +10,23 @@ import SwiftUI
 struct ContentView: View {
 	@StateObject var viewModel = ViewModel()
 	
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-					Text(viewModel.textLabel)
-        }
-        .padding()
-    }
+	var body: some View {
+		VStack {
+			Image(systemName: "globe")
+				.imageScale(.large)
+				.foregroundColor(.accentColor)
+			Text(viewModel.textLabel)
+			
+			if viewModel.isButtonEnabled {
+				Text("Experamental button")
+			}
+		}
+		.padding()
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+	static var previews: some View {
+		ContentView()
+	}
 }

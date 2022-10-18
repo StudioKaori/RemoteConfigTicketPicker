@@ -10,6 +10,7 @@ import Firebase
 
 class ViewModel: ObservableObject {
 	@Published var textLabel = "Default"
+	@Published var isButtonEnabled = false
 	
 	private let remoteConfig: RemoteConfig
 	
@@ -47,6 +48,8 @@ class ViewModel: ObservableObject {
 					DispatchQueue.main.async {
 						// To read the value from firebase, you can simply access remoteConfig["KEY_NAME"].stringValue or intValue
 						self.textLabel = self.remoteConfig["textLabel"].stringValue ?? "default text"
+						self.isButtonEnabled = self.remoteConfig["isButtonEnabled"].boolValue
+						print("isButtonEnabled: \(self.remoteConfig["isButtonEnabled"].boolValue)")
 					}
 					
 				}
