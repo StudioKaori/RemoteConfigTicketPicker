@@ -15,6 +15,8 @@ struct ContentView: View {
 			Image(systemName: "globe")
 				.imageScale(.large)
 				.foregroundColor(.accentColor)
+			
+			Text("Here's the text from Remote config:")
 			Text(viewModel.textLabel)
 			
 			if viewModel.isButtonEnabled {
