@@ -17,6 +17,7 @@ struct ContentView: View {
 				.foregroundColor(.accentColor)
 			
 			Text("Here's the text from Remote config:")
+			Divider()
 			Text(viewModel.textLabel)
 			
 			if viewModel.isButtonEnabled {
